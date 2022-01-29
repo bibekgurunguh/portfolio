@@ -1,0 +1,33 @@
+.App {
+}
+
+.screen {
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.pointer {
+  cursor: pointer;
+}

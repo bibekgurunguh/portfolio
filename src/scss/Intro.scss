@@ -1,0 +1,51 @@
+.intro {
+  background-color: black;
+  min-height: 500px;
+  width: 100%;
+  padding: 20px;
+
+  .images-frame {
+    position: relative;
+    // background-color: green;
+    // border: 5px solid red;
+    // border-radius: 50%;
+    height: 500px;
+    width: 500px;
+    overflow: hidden;
+
+    .image {
+      position: absolute;
+      // background-color: red;
+      height: 500px;
+      width: 500px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .circle {
+      position: absolute;
+      border-width: 125px;
+      border-left-color: skyblue;
+      border-top-color: #00000000;
+      border-right-color: #00000000;
+      border-bottom-color: #00000000;
+      border-style: solid;
+      height: 500px;
+      width: 500px;
+      border-radius: 50%;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
+  }
+
+  .buttons-frame {
+    .button {
+      color: white;
+      font-weight: bold;
+      font-size: 50px;
+    }
+  }
+}
