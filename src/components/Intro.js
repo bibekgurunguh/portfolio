@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { isMobile } from 'react-device-detect';
 import 'scss/Intro.scss';
 
 import artistLogo from 'assets/artist.svg';
@@ -7,11 +8,30 @@ import animatorLogo from 'assets/animator.svg';
 import vEditorLogo from 'assets/v_editor.svg';
 import developerLogo from 'assets/developer.svg';
 
-function Intro() {
+function Intro({ scrollTo }) {
   const [activeHover, setActiveHover] = useState('artist');
+
+  useEffect(() => {
+    if (isMobile) {
+      const states = ['artist', 'animator', 'editor', 'developer'];
+      let i = 0;
+      const interval = setInterval(() => {
+        if (i < states.length - 1) {
+          i++;
+        } else {
+          i = 0;
+        }
+        setActiveHover(states[i]);
+      }, 1500);
+      return () => {
+        clearInterval(interval);
+      };
+    }
+  }, []);
+
   return (
-    <div className="intro">
-      <div className="row centered">
+    <div className="intro section">
+      <div className={`${isMobile ? 'col' : 'row'} centered`}>
         <div className="images-frame centered">
           <motion.div
             className="circle"
@@ -40,8 +60,8 @@ function Intro() {
             className="image"
             animate={
               activeHover === 'artist'
-                ? { transform: 'scale(1)' }
-                : { transform: 'scale(0)' }
+                ? { transform: 'scale(1)', opacity: 1.5 }
+                : { transform: 'scale(0)', opacity: 0 }
             }
             src={artistLogo}
             alt="artist logo"
@@ -50,8 +70,8 @@ function Intro() {
             className="image"
             animate={
               activeHover === 'animator'
-                ? { transform: 'scale(1)' }
-                : { transform: 'scale(0)' }
+                ? { transform: 'scale(1)', opacity: 1.5 }
+                : { transform: 'scale(0)', opacity: 0 }
             }
             src={animatorLogo}
             alt="animator logo"
@@ -60,8 +80,8 @@ function Intro() {
             className="image"
             animate={
               activeHover === 'editor'
-                ? { transform: 'scale(1)' }
-                : { transform: 'scale(0)' }
+                ? { transform: 'scale(1)', opacity: 1.5 }
+                : { transform: 'scale(0)', opacity: 0 }
             }
             src={vEditorLogo}
             alt="video editor logo"
@@ -70,18 +90,26 @@ function Intro() {
             className="image"
             animate={
               activeHover === 'developer'
-                ? { transform: 'scale(1)' }
-                : { transform: 'scale(0)' }
+                ? { transform: 'scale(1)', opacity: 1.5 }
+                : { transform: 'scale(0)', opacity: 0 }
             }
             src={developerLogo}
             alt="developer logo"
           />
         </div>
 
-        <div className="buttons-frame">
+        <div
+          className="buttons-frame col centered"
+          style={{
+            alignItems: 'flex-start',
+            paddingLeft: !isMobile && 20,
+            paddingTop: isMobile && 20,
+          }}
+        >
           <div
             className="button pointer"
             onMouseOver={() => setActiveHover('artist')}
+            onClick={() => scrollTo.artist()}
           >
             ARTIST
           </div>

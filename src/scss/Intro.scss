@@ -1,21 +1,14 @@
 .intro {
   background-color: black;
-  min-height: 500px;
-  width: 100%;
-  padding: 20px;
 
   .images-frame {
     position: relative;
-    // background-color: green;
-    // border: 5px solid red;
-    // border-radius: 50%;
     height: 500px;
     width: 500px;
     overflow: hidden;
 
     .image {
       position: absolute;
-      // background-color: red;
       height: 500px;
       width: 500px;
       top: 0;
@@ -46,6 +39,12 @@
       color: white;
       font-weight: bold;
       font-size: 50px;
+      transition: all 200ms ease-out;
+
+      &:hover {
+        color: #e1cb6e;
+        transform: translateX(20px);
+      }
     }
   }
 }
