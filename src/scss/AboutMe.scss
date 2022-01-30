@@ -1,0 +1,22 @@
+.aboutme-icon {
+  width: 50px;
+}
+
+.aboutme-text-big {
+  padding-top: 10px;
+  font-size: 18px;
+}
+
+.aboutme-btn {
+  padding: 40px 60px;
+  transition: all 200ms ease-in;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.aboutme-line {
+  width: 1px;
+  background-color: lightgrey;
+  height: 100px;
+}

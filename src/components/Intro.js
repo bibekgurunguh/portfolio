@@ -30,8 +30,8 @@ function Intro({ scrollTo }) {
   }, []);
 
   return (
-    <div className="intro section">
-      <div className={`${isMobile ? 'col' : 'row'} centered`}>
+    <div className="intro section centered">
+      <div className={`section-width ${isMobile ? 'col' : 'row'} centered`}>
         <div className="images-frame centered">
           <motion.div
             className="circle"

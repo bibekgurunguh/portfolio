@@ -5,8 +5,8 @@
 .sloth-images {
   position: relative;
   overflow: hidden;
-  width: 350px;
-  height: 350px;
+  width: 400px;
+  height: 400px;
 }
 
 .sloth-image {
@@ -91,6 +91,7 @@
 
 .sloth-text {
   color: white;
-  font-size: 16px;
+  font-size: 20px;
   text-align: center;
+  flex: 1;
 }
